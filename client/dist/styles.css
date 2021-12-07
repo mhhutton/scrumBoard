@@ -1,0 +1,18 @@
+body {
+  background-image: url("cork-board.jpg");
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid rebeccapurple;
+}
+.title-text {
+  font-weight: bold;
+  color: blue;
+}
