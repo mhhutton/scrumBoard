@@ -6,11 +6,18 @@ function Todo({ todoList }) {
       <div className="column-header">
         To Do
       </div>
-      <div>
-        {todoList.map((todoMsg) => (
-          <ul>{todoMsg}</ul>
-        ))}
-      </div>
+
+      {todoList.map((todoMsg) => (
+        <div className="task-container">
+          <div className="task-cont-buttons">
+            <buttton>Update</buttton>
+            <buttton>Delete</buttton>
+          </div>
+          <div className="task-cont-msg">
+          {todoMsg}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

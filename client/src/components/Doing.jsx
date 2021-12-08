@@ -6,11 +6,19 @@ function Doing({ doingList }) {
       <div className="column-header">
         Doing
       </div>
-      <div>
+
         {doingList.map((doingMsg) => (
-          <ul>{doingMsg}</ul>
+          <div className="task-container">
+          <div className="task-cont-buttons">
+            <buttton>Update</buttton>
+            <buttton>Delete</buttton>
+          </div>
+          <div className="task-cont-msg">
+          {doingMsg}
+          </div>
+        </div>
         ))}
-      </div>
+
     </div>
   );
 }

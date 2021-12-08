@@ -6,11 +6,19 @@ function Done({ doneList }) {
       <div className="column-header">
         Done
       </div>
-      <div>
+
         {doneList.map((doneMsg) => (
-          <ul>{doneMsg}</ul>
+          <div className="task-container">
+          <div className="task-cont-buttons">
+            <buttton>Update</buttton>
+            <buttton>Delete</buttton>
+          </div>
+          <div className="task-cont-msg">
+          {doneMsg}
+          </div>
+        </div>
         ))}
-      </div>
+
     </div>
   );
 }

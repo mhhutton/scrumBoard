@@ -79,3 +79,20 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+.task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 10px solid red;
+}
+.task-cont-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 10px solid blue;
+}
+.task-cont-msg {
+  border: 10px solid orange;
+}
