@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Button } from '@material-ui/core';
+
 function Done({ doneList }) {
   return (
     <div className="activity-column">
@@ -7,18 +9,17 @@ function Done({ doneList }) {
         Done
       </div>
 
-        {doneList.map((doneMsg) => (
-          <div className="task-container">
+      {doneList.map((doneMsg) => (
+        <div className="task-container">
           <div className="task-cont-buttons">
-            <buttton>Update</buttton>
-            <buttton>Delete</buttton>
+            <Button>Update</Button>
+            <Button>Delete</Button>
           </div>
           <div className="task-cont-msg">
           {doneMsg}
           </div>
         </div>
-        ))}
-
+      ))}
     </div>
   );
 }

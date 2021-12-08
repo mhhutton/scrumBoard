@@ -85,8 +85,11 @@ body {
   justify-content: space-around;
   align-items: center;
   border: 10px solid red;
+  margin: 10px;
 }
 .task-cont-buttons {
+  height: 10%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

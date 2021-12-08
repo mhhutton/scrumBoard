@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Button } from '@material-ui/core';
+
 function Todo({ todoList }) {
   return (
     <div className="activity-column">
@@ -10,8 +12,8 @@ function Todo({ todoList }) {
       {todoList.map((todoMsg) => (
         <div className="task-container">
           <div className="task-cont-buttons">
-            <buttton>Update</buttton>
-            <buttton>Delete</buttton>
+            <Button>Update</Button>
+            <Button>Delete</Button>
           </div>
           <div className="task-cont-msg">
           {todoMsg}
