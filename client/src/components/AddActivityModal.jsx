@@ -94,10 +94,11 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
               setMsgCharCount(event.target.value.length)
             }}
           />
-          <FormHelperText>
-            {msgCharCount}/250 Characters Entered
-          </FormHelperText>
+
         </FormControl>
+        <FormHelperText>
+          {msgCharCount}/250 Characters Entered
+        </FormHelperText>
         <FormControl error={catError}>
           <RadioGroup
             row
