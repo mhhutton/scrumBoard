@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button } from '@material-ui/core';
+import ClearIcon from '@mui/icons-material/Clear';
 
 function Todo({ todoList }) {
   return (
@@ -13,7 +14,7 @@ function Todo({ todoList }) {
         <div className="task-container">
           <div className="task-cont-buttons">
             <Button>Update</Button>
-            <Button>Delete</Button>
+            <Button><ClearIcon /></Button>
           </div>
           <div className="task-cont-msg">
           {todoMsg}
