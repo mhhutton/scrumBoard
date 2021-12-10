@@ -21,6 +21,13 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
   };
   const handleDialogClose = () => {
     setOpen(false);
+    setHelperTextMsg('Please Enter A Message');
+    setHelperTextCat('Please Choose One Category');
+    setMsgError(false);
+    setCatError(false);
+    setMsg('');
+    setCategory('');
+    setMsgCharCount(0);
   };
   const handleAddActivity = () => {
     if (category !== '' && msg !== '') {
@@ -38,6 +45,7 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
       setMsgError(false);
       setCatError(false);
       setMsg('');
+      setMsgCharCount(0);
     } else if (category === '' || msg === '') {
       if (category === '') {
         setHelperTextCat('Must Select A Category');
