@@ -14,6 +14,7 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
   const [msgError, setMsgError] = useState(false);
   const [helperTextCat, setHelperTextCat] = useState('Please Choose One Category');
   const [helperTextMsg, setHelperTextMsg] = useState('Please Enter A Message');
+  const [msgCharCount, setMsgCharCount] = useState(0);
 
   const handleDialogOpen = () => {
     setOpen(true);
@@ -67,21 +68,27 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
       </Button>
       <Dialog className="add-activity-dialog" open={open} onClose={handleDialogClose}>
         <FormControl error={msgError}>
+          <FormHelperText>{helperTextMsg}</FormHelperText>
           <TextField
             autoFocus
             margin="dense"
             id="name"
             label="Activity"
             placeholder="Enter Activity Description"
-
+            inputProps={{ maxLength: 250}}
             type="text"
             multiline
             rows={4}
             variant="filled"
-            onChange={(event) => setMsg(event.target.value)}
             required
+            onChange={(event) => {
+              setMsg(event.target.value)
+              setMsgCharCount(event.target.value.length)
+            }}
           />
-          <FormHelperText>{helperTextMsg}</FormHelperText>
+          <FormHelperText>
+            {msgCharCount}/250 Characters Entered
+          </FormHelperText>
         </FormControl>
         <FormControl error={catError}>
           <RadioGroup
