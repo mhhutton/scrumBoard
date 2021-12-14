@@ -83,7 +83,7 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
             id="name"
             label="Activity"
             placeholder="Enter Activity Description"
-            inputProps={{ maxLength: 250}}
+            inputProps={{ maxLength: 25}}
             type="text"
             multiline
             rows={4}
@@ -97,7 +97,7 @@ function AddActivity({ todoList, setTodoList, setDoingList, doingList, doneList,
 
         </FormControl>
         <FormHelperText>
-          {msgCharCount}/250 Characters Entered
+          {msgCharCount}/25 Characters Entered
         </FormHelperText>
         <FormControl error={catError}>
           <RadioGroup

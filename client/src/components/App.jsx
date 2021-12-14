@@ -6,9 +6,9 @@ import Done from './Done.jsx';
 import ColumnHeader from './ColumnHeader.jsx';
 
 function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [doingList, setDoingList] = useState([]);
-  const [doneList, setDoneList] = useState([]);
+  const [todoList, setTodoList] = useState(['aaa','bbb','ccc']);
+  const [doingList, setDoingList] = useState(['aaa','bbb','ccc']);
+  const [doneList, setDoneList] = useState(['aaa','bbb','ccc']);
 
   useEffect(() => {
   }, []);
@@ -28,7 +28,7 @@ function App() {
           setDoneList={setDoneList}
         />
         <div className="column-container">
-          <Todo todoList={todoList} />
+          <Todo todoList={todoList} setTodoList={setTodoList} />
           <Doing doingList={doingList} />
           <Done doneList={doneList} />
         </div>
