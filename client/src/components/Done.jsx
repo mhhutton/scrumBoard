@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Button } from '@material-ui/core';
+import ClearIcon from '@mui/icons-material/Clear';
+
 
 function Done({ doneList }) {
   return (
@@ -11,9 +13,10 @@ function Done({ doneList }) {
 
       {doneList.map((doneMsg) => (
         <div className="task-container">
-          <div className="task-cont-buttons">
-            <Button>Update</Button>
-            <Button>Delete</Button>
+          <div className="task-close-btn-cont">
+            <ClearIcon
+              className="task-close-btn"
+            />
           </div>
           <div className="task-cont-msg">
           {doneMsg}
