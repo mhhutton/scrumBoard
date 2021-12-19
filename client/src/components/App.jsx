@@ -5,10 +5,18 @@ import Doing from './Doing.jsx';
 import Done from './Done.jsx';
 import ColumnHeader from './ColumnHeader.jsx';
 
+import MenuIcon from '@mui/icons-material/Menu';
+
 function App() {
-  const [todoList, setTodoList] = useState(['aaa','bbb','ccc']);
+  const [todoList, setTodoList] = useState([
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure do',
+  ]);
   const [doingList, setDoingList] = useState(['aaa','bbb','ccc']);
   const [doneList, setDoneList] = useState(['aaa','bbb','ccc']);
+  const [deletePromptChecked, setDeletePromptChecked] = useState(false);
 
   useEffect(() => {
   }, []);
@@ -17,6 +25,7 @@ function App() {
     <div className="body-container">
       <div className="header">
         <div className="title-text">Scrum Board</div>
+        <div id="menu-icon-btn"> <MenuIcon /> </div>
       </div>
       <div className="main-container">
         <ColumnHeader
@@ -27,10 +36,25 @@ function App() {
           setDoingList={setDoingList}
           setDoneList={setDoneList}
         />
-        <div className="column-container">
-          <Todo todoList={todoList} setTodoList={setTodoList} />
-          <Doing doingList={doingList} />
-          <Done doneList={doneList} />
+        <div className="activity-columns-container">
+          <Todo
+            todoList={todoList}
+            setTodoList={setTodoList}
+            deletePromptChecked={deletePromptChecked}
+            setDeletePromptChecked={setDeletePromptChecked}
+          />
+          <Doing
+            doingList={doingList}
+            setDoingList={setDoingList}
+            deletePromptChecked={deletePromptChecked}
+            setDeletePromptChecked={setDeletePromptChecked}
+          />
+          <Done
+            doneList={doneList}
+            setDoneList={setDoneList}
+            deletePromptChecked={deletePromptChecked}
+            setDeletePromptChecked={setDeletePromptChecked}
+          />
         </div>
       </div>
     </div>

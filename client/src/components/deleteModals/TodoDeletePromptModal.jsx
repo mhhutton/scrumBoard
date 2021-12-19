@@ -6,7 +6,7 @@ Typography, Checkbox
 
 import ClearIcon from '@mui/icons-material/Clear';
 
-function DeletePromptModal({ deleteTodoTask, index, deletePromptChecked, setDeletePromptChecked }) {
+function TodoDeletePromptModal({ deleteTodoTask, index, deletePromptChecked, setDeletePromptChecked }) {
   const [open, setOpen] = useState(false);
   const [checked, setChecked] = useState(false);
 
@@ -63,4 +63,4 @@ function DeletePromptModal({ deleteTodoTask, index, deletePromptChecked, setDele
   )
 }
 
-export default DeletePromptModal;
+export default TodoDeletePromptModal;
