@@ -24,8 +24,18 @@ function App() {
   return (
     <div className="body-container">
       <div className="header">
-        <div className="title-text">Scrum Board</div>
+        <div className="title-text-cont">
+          <img
+            src="daily-text.png"
+            className="daily-text"
+          />
+          <img
+            src="scrum-text.png"
+            className="scrum-text"
+          />
+        </div>
         <div id="menu-icon-btn"> <MenuIcon /> </div>
+        <div className="header-bg"></div>
       </div>
       <div className="main-container">
         <ColumnHeader

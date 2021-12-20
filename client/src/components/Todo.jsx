@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ClearIcon from '@mui/icons-material/Clear';
+import { Input } from '@material-ui/core';
 
 import TodoDeletePromptModal from './deleteModals/TodoDeletePromptModal.jsx'
 
@@ -17,12 +18,13 @@ function Todo({ todoList, setTodoList, deletePromptChecked,
     if (deletePromptChecked === false) {
       return (
         <TodoDeletePromptModal
-            index={index}
-            deleteTodoTask={deleteTodoTask}
-            deletePromptChecked={deletePromptChecked}
-            setDeletePromptChecked={setDeletePromptChecked}
-            handleDeletePromptCheck={handleDeletePromptCheck}
-          />
+          className="task-close-btn"
+          index={index}
+          deleteTodoTask={deleteTodoTask}
+          deletePromptChecked={deletePromptChecked}
+          setDeletePromptChecked={setDeletePromptChecked}
+          handleDeletePromptCheck={handleDeletePromptCheck}
+        />
       )
     } else if (deletePromptChecked === true) {
       return (
@@ -51,11 +53,16 @@ function Todo({ todoList, setTodoList, deletePromptChecked,
           </div>
           { handleDeletePromptCheck(index) }
         </div>
-
-        <div className="task-cont-msg">
-        {todoMsg}
-        </div>
-
+        <Input
+          className="sticky-note-msg"
+          defaultValue={todoMsg}
+          multiline
+          maxRows={15}
+          inputProps={{ 'aria-label': 'naked', maxLength: 250, style: {padding: 8}}}
+          // onChange={(event) => {
+          //   setTodoMsg(event.target.value)
+          // }}
+        />
       </div>
     ))
   );
@@ -67,7 +74,13 @@ function Todo({ todoList, setTodoList, deletePromptChecked,
   return (
     <div className="activity-column">
       <div className="activity-column-header">
-        <div className="activity-column-title">To Do</div>
+        <div className="activity-title">
+          <img
+              src="todo-text.png"
+              className="activity-title-text"
+            />
+        </div>
+        <div className="activity-column-header-bg"></div>
       </div>
 
       <div className="activity-column-sticky-notes">

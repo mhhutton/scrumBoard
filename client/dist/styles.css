@@ -1,6 +1,6 @@
 body {
   background-image: url("cork-board.jpg");
-  background-color: white;
+  background-color: brown;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -10,20 +10,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 10px solid rebeccapurple;
-}
-.title-text {
-  font-weight: bold;
-  color: blue;
-}
-#menu-icon-btn {
-  border: 1px solid black;
-  border-radius: 3px;
-}
-#menu-icon-btn:hover {
-  color: red;
-  border: 1px solid red;
-  cursor: pointer;
 }
 .body-container {
   height: 80%;
@@ -33,74 +19,136 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+    /*============
+        HEADER
+    ============*/
+
 .header {
-  background-color: brown;
   box-shadow: 5px 5px 5px 5px rgba(32, 28, 28, 0.25), 0px 5px 5px 5px rgba(0, 0, 0, 0.25);
   width: 100%;
-  height: 5vh;
+  height: 6vh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  position: relative;
+  top: 0px;
 }
+.header-bg {
+  position: absolute;
+  background-color: black;
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.title-text-cont {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 80%;
+}
+.daily-text {
+  height: 100%;
+}
+.scrum-text {
+  height: 75%;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+#menu-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #02F05A;
+  border-radius: 3px;
+  color: #02F05A;
+}
+#menu-icon-btn:hover {
+  color: red;
+  border: 1px solid red;
+  cursor: pointer;
+}
+
+    /*============
+        MAIN
+    ============*/
+
 .main-container {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin: 1%;
   box-shadow: 5px 5px 5px 5px rgba(32, 28, 28, 0.25), 0px 5px 5px 5px rgba(0, 0, 0, 0.25);
   border: 3px solid 	#404040;
   border-radius: 9px;
   background-color: white;
   width: 95vw;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .main-container-header {
-  border: 2px solid blue;
+  border-radius: 8px 8px 0px 0px;
+  border-color: #02F05A none #02F05A none;
+  border-width: 2px;
+  border-style: solid none solid none;
+  box-shadow: 0px 5px 8px 0px rgba(32, 28, 28, 0.25), 0px 2px 1px 0px rgba(0, 0, 0, 0.25);
   height: 10%;
   width: 90%;
-  margin: 0px 0px 25px 0px;
+  margin: 5px 0px 15px 0px;
+  padding: 5px 0 5px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
+      /*=================
+        ACTIVITY COLUMN
+      =================*/
 .activity-columns-container {
   width: 100%;
-  /* height: 80%; */
-
+  max-height: 1000px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  background: black;
 }
 .activity-column {
-  border: 2px solid black;
+  margin: 0 .2% 0 .2%;
+  border-color: black;
+  border-width: 3px;
+  border-style: none solid none solid;
   width: 33%;
-  /* height: 60%; */
-  /* overflow: scroll; */
-  /* padding: 25px;
-  height: 90%;
-
-  margin: 10px 10px 10px 10px; */
-}
-.activity-column-header {
-  border: 2px solid red;
-  width: 100%;
-  position: sticky;
-  top:0;
+  overflow-x: hidden;
   background: white;
 }
-.activity-column-title {
-  border: 2px solid black;
-  padding: 10px;
-  text-align: center;
+.activity-column-header {
+  box-shadow: 0px 2px 5px 5px rgba(32, 28, 28, 0.25), 0px 2px 5px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 10%;
+  position: relative;
+  top: 0%;
+  z-index: 1;
+}
+.activity-title {
+  position: absolute;
+  height: 80%;
+}
+.activity-title-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 80%;
+}
+.activity-column-header-bg {
+  position: absolute;
+  background-color: black;
+  opacity: 0.8;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
 }
 .activity-column-sticky-notes {
-  border: 2px solid olivedrab;
-  padding: 25px;
+  padding: 20px 15px 15px 15px;
 }
 .checkbox-cont {
   display: flex;

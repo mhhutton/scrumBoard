@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ClearIcon from '@mui/icons-material/Clear';
+import { Input } from '@material-ui/core';
 
 import DoingDeletePromptModal from './deleteModals/DoingDeletePromptModal.jsx'
 
@@ -51,11 +52,16 @@ function Doing({ doingList, setDoingList, deletePromptChecked,
           </div>
           { handleDeletePromptCheck(index) }
         </div>
-
-        <div className="task-cont-msg">
-        {doingMsg}
-        </div>
-
+        <Input
+          className="sticky-note-msg"
+          defaultValue={doingMsg}
+          multiline
+          maxRows={15}
+          inputProps={{ 'aria-label': 'naked', maxLength: 250, style: {padding: 8}}}
+          // onChange={(event) => {
+          //   setDoingMsg(event.target.value)
+          // }}
+        />
       </div>
     ))
   );
@@ -67,7 +73,13 @@ function Doing({ doingList, setDoingList, deletePromptChecked,
   return (
     <div className="activity-column">
       <div className="activity-column-header">
-        <div className="activity-column-title">Doing</div>
+        <div className="activity-title">
+          <img
+            src="doing-text.png"
+            className="activity-title-text"
+          />
+        </div>
+        <div className="activity-column-header-bg"></div>
       </div>
 
       <div className="activity-column-sticky-notes">
